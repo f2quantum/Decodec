@@ -32,8 +32,8 @@ jobs:
         python main.py
     
     - name: Archive production artifacts
-       uses: actions/upload-artifact@v3
-       with:
-        name: output csv and excel
-        path: |
-         output
+      uses: actions/upload-artifact@v3
+      with:
+       name: output csv and excel
+       path: |
+        output
