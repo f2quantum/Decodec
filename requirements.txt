@@ -1,1 +1,7 @@
-pandas base64 binascii pyDes configparser requests typing
+pandas 
+base64 
+binascii 
+pyDes 
+configparser 
+requests 
+typing
