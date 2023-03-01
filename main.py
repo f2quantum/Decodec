@@ -135,7 +135,7 @@ def DecryptDES(input) -> str:
     return des_obj.decrypt(base64.b64decode(input))
 
 
-def getGameDownLoadURL(BH) -> tuple[str, str, str]:
+def getGameDownLoadURL(BH) :
     url = "http://002001a.oss-accelerate.aliyuncs.com/c/" + str(BH) + ".txt"
     ini_str = getByteStream(url)
     if '<Response [404]>' in ini_str or '<Response [502]>' in ini_str or len(ini_str) == 0:
