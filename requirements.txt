@@ -4,3 +4,4 @@ configparser
 requests 
 typing
 openpyxl
+xlsxwriter
