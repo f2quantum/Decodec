@@ -58,6 +58,8 @@ def GetContentList():
         list = []
         idx = 0
         for row in data:
+            if idx == 10:
+                break
             tmp_list = []
             idx = idx + 1
             # Id = DecryptDES(str(row['Id']))
@@ -85,7 +87,7 @@ def GetContentList():
 
         df = pd.DataFrame(columns=table_header, data=list)
         df.to_csv('./data/Games.csv', encoding='utf-8', index=None)
-        df.to_excel('./data/Games.xlsx', sheet_name='sheet_1', index=False)
+        df.to_excel('./data/Games.xlsx', engine='xlsxwriter',sheet_name='sheet_1', index=False)
 
     else:
         print(response)
