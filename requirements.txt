@@ -3,3 +3,4 @@ pyDes
 configparser 
 requests 
 typing
+openpyxl
