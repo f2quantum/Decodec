@@ -26,9 +26,13 @@ jobs:
         pip install requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Run Python Crawl
+    - name: Run 
+    
+    
+    Python Crawl
       shell: bash
       run: |
+        mkdir data
         python main.py
     
     - name: Archive production artifacts
@@ -36,4 +40,4 @@ jobs:
       with:
        name: output csv and excel
        path: |
-        output
+        data
