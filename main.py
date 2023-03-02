@@ -58,8 +58,7 @@ def GetContentList():
         list = []
         idx = 0
         for row in data:
-            if idx == 10:
-                break
+            
             tmp_list = []
             idx = idx + 1
             # Id = DecryptDES(str(row['Id']))
