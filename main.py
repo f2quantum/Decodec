@@ -1,7 +1,7 @@
 import json
 from io import BytesIO
 from typing import Tuple
-
+import xlsxwriter
 import requests
 import pandas as pd
 import configparser
