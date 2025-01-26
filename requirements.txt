@@ -5,3 +5,4 @@ requests
 typing
 openpyxl
 XlsxWriter
+flask
