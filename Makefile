@@ -1,4 +1,4 @@
-CRON_JOB := "0 2 \* \* \* python3 $(shell pwd)/main.py"
+CRON_JOB := "0 2 \* \* \* python3 $(shell pwd)/main.py >> /var/log/decodec/cron.log"
 
 add-cron:
 	# 将当前的 crontab 内容保存到 current_cron.tmp 文件中
