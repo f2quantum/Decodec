@@ -1,8 +1,18 @@
 CRON_JOB := "0 2 \* \* \* python3 $(shell pwd)/main.py"
 
 add-cron:
-	@echo "$(CRON_JOB)" > new_cron.tmp
+	# 将当前的 crontab 内容保存到 current_cron.tmp 文件中
+	@crontab -l > current_cron.tmp 2>/dev/null || true
+	# 将新的定时任务添加到 new_cron.tmp 文件中
+	@echo "$(CRON_JOB)" >> new_cron.tmp
+	# 将当前的 crontab 内容追加到 new_cron.tmp 文件中
+	@cat current_cron.tmp >> new_cron.tmp
+	# 将 new_cron.tmp 文件的内容设置为新的 crontab
+	@crontab new_cron.tmp
+	# 输出添加成功的提示信息
 	@echo "Add Crontab Successful"
+	# 删除临时文件
+	@rm -f current_cron.tmp new_cron.tmp
 
 install-deps:
 	python3 -m pip install --upgrade pip
@@ -11,7 +21,7 @@ install-deps:
 
 
 # 定义服务名称
-SERVICE_NAME = flask_app.service
+SERVICE_NAME = DecodecGame.service
 
 # 定义 Flask 应用的启动命令
 FLASK_COMMAND = python3 server.py
